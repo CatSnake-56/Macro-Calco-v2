@@ -5,9 +5,10 @@ const User = models.User;
 const recipeController = {};
 
 //MIGHT NEED TO DEBGUG FOR &q= AT THE END
-const baseURL =
-  'https://api.edamam.com/api/recipes/v2?type=public&app_id=df53c42b&app_key=42722d0f8c7171ba43d1b261ca01b673&ingr=1%2B&field=label&field=image&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=calories&field=totalNutrients&q=';
-//str.replaceAll(" ", "%20");
+//const baseURL =
+ // 'https://api.edamam.com/api/recipes/v2?type=public&app_id=9a4c08ba&app_key=12c17c0ad0ca72a71536232a89f360ef&ingr=1+&field=label&field=image&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=calories&field=totalNutrients&q=';
+const baseURL = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=df53c42b&app_key=42722d0f8c7171ba43d1b261ca01b673&ingr=1%2B&field=label&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=calories&field=totalNutrients'
+  //str.replaceAll(" ", "%20");
 
 const calculateRelevance = (recipeMacros, userMacros) => {
   //recipesMacros, userMacros = [calories, fat, carb, protein]
@@ -37,11 +38,15 @@ const normalizeRecipe = (macros) => {
 
 recipeController.saveRecipes = async (req, res, next) => {
   // save recipe to the collection in mongoose
+
   const url = baseURL + req.body.queryString; //url going to the fetch
-  const response = await fetch(url);
+  console.log('u is:' , url)
+  const response = await fetch(baseURL);
+  console.log('does it reach here')
+
   const jsonResponse = await response.json();
   const recipes = jsonResponse.hits;
-
+  console.log('does it reach here')
   for (const recipeObj of recipes) {
     const { label } = recipeObj.recipe;
     // check for if recipe is in collection
