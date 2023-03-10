@@ -1,0 +1,136 @@
+/**************** 
+ RECIPE COLLECTION               
+*****************/
+
+.find-recipe-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* padding: 1em; */
+  margin: 1rem;
+  height: 87vh;
+  overflow-y: hidden;
+}
+
+#find-left-side-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+#find-recipe-header{
+  font-family: var(--main-font);
+}
+
+.refine-search-form {
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.find-recipe-search {
+  text-indent: 0.5rem;
+  height: 40px;
+  width: 62.5%;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px black solid;
+  border-left: none;
+  border: none;
+
+}
+
+.find-recipe-search:focus{
+  outline: none;
+}
+
+.submit-recipe-search-btn {
+  width: 2.5em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px black solid;
+  border-left: none;
+  border: none;
+  background-color: white;
+}
+
+.submit-recipe-search-btn:hover{
+  cursor: pointer;
+}
+
+
+
+.recipe-selection {
+  display: flex;
+  flex-direction: row;
+  height: 76vh;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  /* flex: 2; */
+}
+
+.recipe-selection::-webkit-scrollbar {
+  background: transparent;
+}
+
+.current-recipe-collection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+
+}
+
+#current-name-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#current-recipe-name-form{
+  font-family: var(--main-font);
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  height: 110px;
+}
+
+#current-recipe-name-form p{
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+} 
+
+#current-recipe-form-input{
+  width: 80%;
+  padding: .5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 9px 0;
+}
+
+#current-recipe-form-input:focus{
+  outline: none;
+}
+
+#add-collection-button{
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 80%;
+  padding: 5px 0;
+  transition: 0.15s;
+  border: 1px solid var(--tertiary-color);
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+#add-collection-button:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
